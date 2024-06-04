@@ -1,0 +1,53 @@
+.card {
+  position: relative;
+  cursor: pointer;
+}
+
+.card.active {
+  border: 2px solid #ffffff;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.342);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card.active .overlay {
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+}
+
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s; 
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
